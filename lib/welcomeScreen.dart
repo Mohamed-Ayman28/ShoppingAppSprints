@@ -22,6 +22,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
                 fontSize: 70,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
+                fontFamily: 'Suwannaphum-Bold',
               ),
             ),
           ),
@@ -33,6 +34,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
+                fontFamily: 'Suwannaphum-Regular',
               ),
             ),
           ),
@@ -50,7 +52,10 @@ class _WelcomescreenState extends State<Welcomescreen> {
                     },
                     child: const Text(
                       "Sign Up",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Suwannaphum-Bold',
+                      ),
                     ),
                   ),
                 ],
@@ -69,7 +74,10 @@ class _WelcomescreenState extends State<Welcomescreen> {
                     },
                     child: const Text(
                       "Sign In",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Suwannaphum-Bold',
+                      ),
                     ),
                   ),
                 ],

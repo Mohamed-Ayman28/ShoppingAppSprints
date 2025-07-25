@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/shoppingPage.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -27,7 +28,18 @@ class _LoginpageState extends State<Loginpage> {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/shopping');
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  transitionDuration: const Duration(milliseconds: 700),
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const ShoppingPage(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                        return FadeTransition(opacity: animation, child: child);
+                      },
+                ),
+              );
             },
             child: const Text("Close"),
           ),

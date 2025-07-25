@@ -292,7 +292,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
@@ -348,7 +348,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                         const SizedBox(width: 10),
                         Expanded(
                           child: Text(
-                            'Special deal on product #${index + 1}! Limited time only.',
+                            'Special deal on the product Limited time only.',
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/shoppingPage.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -33,12 +34,23 @@ class _SignupScreenState extends State<SignupScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text("Success"),
-        content: const Text("Account sign-in successfully"),
+        content: const Text("Account created successfully"),
         actions: [
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/shopping');
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  transitionDuration: const Duration(milliseconds: 700),
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const ShoppingPage(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                        return FadeTransition(opacity: animation, child: child);
+                      },
+                ),
+              );
             },
             child: const Text("Close"),
           ),
@@ -66,7 +78,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Text(
                   "Create an Account",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 38,
                     color: Colors.purple,
                     fontWeight: FontWeight.bold,
                   ),
@@ -198,7 +210,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                 ),
                 child: const Center(
                   child: Text("Sign Up", style: TextStyle(color: Colors.white)),
